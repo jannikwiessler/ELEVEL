@@ -1,7 +1,6 @@
 import matlab.engine
 import numpy as np
 
-
 class MyApp():
     def __init__(self):
         super().__init__()

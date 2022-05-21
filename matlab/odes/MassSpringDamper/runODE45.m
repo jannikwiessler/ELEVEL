@@ -12,7 +12,8 @@ y0 = [x0; v0];
 
 %% settings: solver
 solver = {'ode45','ode23','ode23s','ode15s'};
-opts = odeset('RelTol',1e-6,'AbsTol',1e-8,'OutputFcn',@myOutputFcn2);
+%opts = odeset('RelTol',1e-6,'AbsTol',1e-8);
+opts = odeset('RelTol',1e-6,'AbsTol',1e-8,'OutputFcn',@myOutputFcn);
 tic
 [t, y] = ode45(@MassSpringDamperSystem, tSpan, y0, opts);
 time = toc;

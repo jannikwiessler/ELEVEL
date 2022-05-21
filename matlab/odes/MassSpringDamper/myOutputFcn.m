@@ -1,4 +1,4 @@
-function status = myOutputFcn(t,y,FLAG)
+ function stop = myOutputFcn(t,y,FLAG)
 persistent myPlot
 if strcmp(FLAG,'init')
     myPlot = figure('Name','MSD System');
@@ -19,9 +19,9 @@ elseif strcmp(FLAG,'')
     set(myPlot.Children(2).Children(1),'xdata',[speed y(2,:)],'ydata',[time t]); % speed
     pause(0.05);
 end
-if strcmp(FLAG,'done') || y(1,end) < 0
-    status = 1;
+if strcmp(FLAG,'done')
+    stop = 1;
 else
-    status = 0;
+    stop = 0;
 end
 end
